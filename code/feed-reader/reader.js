@@ -1,9 +1,10 @@
 import { createStore } from "redux";
 import { mockMicrosoft } from "./sample-data.js";
 
+const dummyData = [mockMicrosoft, mockMicrosoft];
+
 const defaultState = {
-  one: 1,
-  two: 2
+  articles: dummyData
 };
 
 const articleFeed = (state = defaultState, action) => {
@@ -19,5 +20,5 @@ const articleFeed = (state = defaultState, action) => {
   }
 };
 
-const articles = createStore(articleFeed);
-console.log(articles.getState());
+const articleStore = createStore(articleFeed);
+console.log(articleStore.getState());
